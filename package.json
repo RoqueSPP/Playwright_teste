@@ -1,0 +1,22 @@
+{
+  "name": "api-playwright-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@faker-js/faker": "^10.6.0",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4",
+    "@types/oracledb": "^7.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.5",
+    "oracledb": "^7.0.1",
+    "ts-dotenv": "^0.9.1"
+  }
+}
