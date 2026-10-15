@@ -15,21 +15,22 @@ const mypw = {
 }; // set mypw to the hr schema password
 console.log('teste', configDB.db.libDir)
 export async function conectar(query: string): Promise<Row[]> {
-    let connection;
+      let connection: oracledb.Connection | undefined;
 
     try {
-        const connection = await oracledb.getConnection(mypw);
+        connection = await oracledb.getConnection(mypw);
         console.log('banco conectado com sucesso');
         const result = await connection.execute<Row>(
             query,
             [],
-            { outFormat: oracledb.OUT_FORMAT_OBJECT,autoCommit:true });
-        
+            { outFormat: oracledb.OUT_FORMAT_OBJECT, autoCommit: true, maxRows: 1000 });
+
         return result.rows ?? [];
     } catch (error) {
         console.error('Erro ao conectar ao banco', error);
         throw error;
-
+    } finally {
+        await connection?.close();
     }
 }
 
