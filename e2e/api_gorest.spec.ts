@@ -4,7 +4,7 @@ test.describe('Example Test Suite', () => {
   let idUser: number |string;
 
   test('API Test post', async ({ api }) => {
-    const response = await api.post('https://gorest.co.in/public/v2/users', {
+    const response = await api.post('https://gorest.in/public/v2/users', {
       headers: {
         Authorization: `Bearer ${config.auth.token}`
       },
@@ -18,7 +18,7 @@ test.describe('Example Test Suite', () => {
   })
   test('API Test put', async ({ api }) => {
     bodyUser.name = "Updated Name"
-    const response = await api.put(`https://gorest.co.in/public/v2/users/${idUser}`, {
+    const response = await api.put(`https://gorest.in/public/v2/users/${idUser}`, {
       headers: {
         Authorization: `Bearer ${config.auth.token}`
       },
@@ -32,7 +32,7 @@ test.describe('Example Test Suite', () => {
   })
 
   test('API Test get', async ({ api }) => {
-    const response = await api.get(`https://gorest.co.in/public/v2/users/${idUser}`, {
+    const response = await api.get(`https://gorest.in/public/v2/users/${idUser}`, {
       headers: {
         Authorization: `Bearer ${config.auth.token}`
       }
@@ -44,7 +44,7 @@ test.describe('Example Test Suite', () => {
   })
 
   test('API Test delete', async ({ api }) => {
-    const response = await api.delete(`https://gorest.co.in/public/v2/users/${idUser}`, {
+    const response = await api.delete(`https://gorest.in/public/v2/users/${idUser}`, {
       headers: {
         Authorization: `Bearer ${config.auth.token}`
       }
