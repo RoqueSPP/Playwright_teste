@@ -23,8 +23,7 @@ test.describe('Teste de Banco de Dados Oracle', () => {
     test('DataBase Buscar Registro Atualizar', async () => {
     const query = searchUser;
     const result = await conectar(query)
-    const UPUser = result[0]?.NOME
-    console.log(UPUser)
+    console.log(result)
   })
   test('DataBase Deletar Registro', async () => {
     const result = await conectar(deleteUser(user));
